@@ -1,10 +1,18 @@
 const inquirer = require('inquirer');
 const express = require('express');
 const app = express();
+const delay = require('express-delay');
 const mysql = require('mysql2');
+// const routes = require('./routes');
+// app.use(routes);
 
 const PORT = process.env.PORT || 3001;
 
+const showBanner = require('node-banner');
+ 
+showBanner('Employee Manager', 'Manage efficiently.', 'blue','green');
+
+ 
 const question=[
     {
       type: 'list',
@@ -39,11 +47,13 @@ const question=[
   {
     type: 'input',
     name:'employeeSalary',
+    default: 'N/A',
     message: "What is the salary of this role?"
   },
   {
     type: 'input',
     name:'assignedManager',
+    default: 'N/A',
     message: "Who is the employee's manager?"
   },
   {
@@ -52,21 +62,33 @@ const question=[
     message: "What is the name of this role?"
   }];
 
+
+
+// setTimeout(init, 5000);
+// app.listen(PORT);
+// app.listen(PORT, () => console.log('Now listening'));
+
+
+
   inquirer.prompt(question)
 
-  const db = mysql.createConnection(
-    {
-      host: 'localhost',
-      // MySQL username,
-      user: 'root',
-      // TODO: Add MySQL password
-      password: '',
-      database: 'employee_db'
-    },
-    console.log(`Connected to the employee_db database.`)
-  );
 
+// const updateEmployeeRole = () => {
 
+//     db.query(`SELECT * FROM employee`, (err, res) => {
+//         if (err) throw err;
+//         let employees = (employee => ({name: employee.first_name + ' ' + employee.last_name, value: employee.id}));
+//         inquirer.prompt([
+//             {
+//                 name: 'employee',
+//                 type: 'rawlist',
+//                 message: 'What employee do you want to update?',
+//                 choices: employees
+//             }
+//         ])
+//     })
+//     app();
+// }
 
 
 
