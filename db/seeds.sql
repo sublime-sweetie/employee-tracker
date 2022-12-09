@@ -5,4 +5,4 @@ VALUES ("Faith", "Wallace", "Engineering", "Lead Engineer", 7000000),
        ("Rain", "Bo", "Sales", "Salesperson", 45000),
        ("Apple", "Seed", "Finance", "Accountant", 40000),
        ("Cotton","Candy", "Sales","Sales Lead",500000 );
--- SELECT * FROM employeeTable
+SELECT * FROM employeeTable
